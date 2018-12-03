@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Nitin'
+  vmImage: Nitin
 
 steps:
 - script: |
