@@ -1,9 +1,7 @@
-jobs:
-- job: Windows
-  pool: 
-    vmImage: Nitin
+pool:
+  vmImage: 'Nitin'
 
-  - script: npm install
-    displayName: 'Npm Install'
-  - script: npm test
-    displayName: 'Npm Test'
+- script: |
+    npm install
+    npm test
+  displayName: 'npm install and test'
