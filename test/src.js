@@ -147,4 +147,22 @@ describe('gulp.src()', function() {
       done();
     });
   });
+
+  it('should return a file stream from a flat path', function(done) {
+    var a = 0;
+    var stream = gulp.src(path.join(__dirname, './fixtures/test.coffee'));
+    stream.on('error', done);
+    stream.on('data', function(file) {
+      ++a;
+      expect(file).toExist();
+      expect(file.path).toExist();
+      expect(file.contents).toExist();
+      expect(file.path).toEqual(path.join(__dirname, './fixtures/test2.coffee'));
+      expect(file.contents).toEqual('this is a test');
+    });
+    stream.on('end', function() {
+      expect(a).toEqual(1);
+      done();
+    });
+  });
 });
