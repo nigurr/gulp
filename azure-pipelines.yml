@@ -10,9 +10,11 @@ trigger:
 - master
 
 steps:
+- powershell: gci env:* | sort-object name
+  displayName: 'Environment Info'
+  
 - script: npm install
   displayName: 'npm install'
 
 - script: npm test
   displayName: 'npm test'
-- powershell: gci env:* | sort-object name
