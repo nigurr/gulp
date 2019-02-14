@@ -5,6 +5,7 @@
 
 variables:
   agent.disableupdate: true
+  agent.disablelogplugin.TestResultLogPlugin: false
 
 trigger:
 - master
